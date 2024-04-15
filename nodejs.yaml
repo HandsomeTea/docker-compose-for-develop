@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    service-name:
+        # node:xx.xx.x
+        image: node:20.11.1
+        restart: always
+        container_name: project_comtainer_name
+        ports:
+            # nodejs程序启动端口映射
+            - 3579:3579
+        volumes:
+            # 以下写法，应用程序应放在本地相对于本文件的上一层目录，并将上层目录映射到docker内部的/usr/src/app中
+            - ../:/usr/src/app
+        environment:
+            NODE_ENV: development
+        command:
+            - sh
+            - -c
+            - |
+                cd /usr/src/app
+                [ ! -d "/usr/src/app/node_modules" ] && npm install
+                npm run start
