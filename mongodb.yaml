@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+    mongodb:
+        # mongo:5.0.23
+        image: mongo:latest
+        restart: always
+        container_name: mongodb
+        ports:
+            - 27017:27017
+        volumes:
+            - ./mongodb/data/db:/data/db
+            - ./mongodb/data/log:/var/log/mongodb
+            - ./mongodb/mongod.conf:/etc/mongo/mongod.conf
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=admin
+            - MONGO_INITDB_ROOT_PASSWORD=admin
+            - TZ=Asia/Shanghai
+# 连接的url：mongodb://admin:admin@localhost:27017/?authSource=admin
