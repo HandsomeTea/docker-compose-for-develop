@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-    service-name:
+    project_docker_compose_name:
         # node:xx.xx.x
         image: node:20.11.1
         restart: always
