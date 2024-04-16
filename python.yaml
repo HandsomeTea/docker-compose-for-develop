@@ -1,7 +1,7 @@
 version: "3.8"
 services:
     python_project_docker_compose_service_name:
-        image: node:20.11.1
+        image: python:3.7.9
         restart: always
         container_name: project_comtainer_name
         ports:

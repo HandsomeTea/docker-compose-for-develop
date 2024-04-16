@@ -1,7 +1,6 @@
 version: "3.8"
 services:
     nodejs_project_docker_compose_service_name:
-        # node:xx.xx.x
         image: node:20.11.1
         restart: always
         container_name: project_comtainer_name
