@@ -4,7 +4,7 @@ services:
         # node:xx.xx.x
         image: node:20.11.1
         restart: always
-        container_name: nodejs_project_comtainer_name
+        container_name: project_comtainer_name
         ports:
             # nodejs程序启动端口映射
             - 3579:3579

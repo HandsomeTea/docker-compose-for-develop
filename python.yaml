@@ -3,7 +3,7 @@ services:
     python_project_docker_compose_service_name:
         image: node:20.11.1
         restart: always
-        container_name: python_project_comtainer_name
+        container_name: project_comtainer_name
         ports:
             # python程序启动端口映射
             - 3579:3579
