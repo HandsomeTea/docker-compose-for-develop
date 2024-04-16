@@ -18,3 +18,5 @@ services:
 # 连接地址：
 # mysql://root:root@0.0.0.0:3306/db
 # jdbc:mysql://0.0.0.0:3306/?allowPublicKeyRetrieval=true
+
+# 注意3306端口可能被已有的mysql占用，使用 systemctl stop/status mysql 查看

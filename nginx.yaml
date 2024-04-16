@@ -15,3 +15,4 @@ services:
             - 443:443
         environment:
             - TZ=Asia/Shanghai
+# 注意80端口可能被Apache占用，使用 systemctl stop/status apache2 查看

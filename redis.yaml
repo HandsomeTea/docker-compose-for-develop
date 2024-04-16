@@ -1,0 +1,27 @@
+version: "3.8"
+services: &redis
+    redis:
+        # redis:7.2.4
+        image: redis:latest
+        restart: always
+        container_name: redis
+        ports:
+            - 6379:6379
+        volumes:
+            - ./redis/redis.conf:/etc/redis/redis.conf
+            - ./redis/data:/data
+        command: redis-server /etc/redis/redis.conf
+    # redis连接地址 redis://0.0.0.0:6379
+
+    redisinsight:
+        image: redislabs/redisinsight:latest
+        restart: always
+        container_name: redisinsight
+        environment:
+            REDIS_HOST: redis
+            REDIS_PORT: 6379
+        ports:
+            - 5540:5540
+        links:
+            - redis
+    # redis可视化工具访问地址:http://localhost:5540，host:redis，端口6379，没有用户名和密码

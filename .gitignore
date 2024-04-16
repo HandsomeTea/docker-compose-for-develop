@@ -1,0 +1,6 @@
+mongodb/data
+mysql/data
+redis/**/*.rdb
+nginx/cert
+nginx/logs
+minio
