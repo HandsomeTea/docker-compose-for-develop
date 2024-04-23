@@ -4,3 +4,5 @@ redis/**/*.rdb
 nginx/cert
 nginx/logs
 minio
+rabbitmq/data
+rabbitmq/log

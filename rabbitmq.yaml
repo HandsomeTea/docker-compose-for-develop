@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+    rabbitmq:
+        image: rabbitmq:management
+        restart: always
+        container_name: rabbitmq
+        ports:
+            - 5672:5672 # 用于 amqp 协议通信，用于程序连接 rabbitmq 使用
+            - 15672:15672 # 用于 rabbitmq 的 web 管控台访问端口
+        volumes:
+            - ./rabbitmq/data:/var/lib/rabbitmq
+            - ./rabbitmq/log:/var/log/rabbitmq
+        environment:
+            - RABBITMQ_DEFAULT_USER=admin
+            - RABBITMQ_DEFAULT_PASS=admin
+            - RABBITMQ_DEFAULT_VHOST=/
+            - TZ=Asia/Shanghai

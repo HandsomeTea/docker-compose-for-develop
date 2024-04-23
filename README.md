@@ -7,7 +7,7 @@
 - minio
 - nodejs
 - python
-
+- rabbitmq
 
 ## docker版本
 - `docker -v`

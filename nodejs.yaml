@@ -11,7 +11,8 @@ services:
             # 以下写法，应用程序应放在本地相对于本文件的上一层目录，并将上层目录映射到docker内部的/usr/src/app中
             - ../:/usr/src/app
         environment:
-            NODE_ENV: development
+            # 前端项目使用该环境时，环境变量不要配置，不然会导致打包结果不正常
+            # NODE_ENV: development
         command:
             - sh
             - -c
