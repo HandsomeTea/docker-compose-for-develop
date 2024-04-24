@@ -17,10 +17,10 @@
 
 ## 操作
 - 启动：在项目根目录执行`sudo docker-compose -f xxx.yaml up -d`。
-- 查看容器启动状态：`sudo docker ps -a --filter name=project_comtainer_name`。
-- 停止容器：`sudo docker stop project_comtainer_name`。
-- 重启容器：`sudo docker restart project_comtainer_name`。
-- 删除容器：`sudo docker rm project_comtainer_name`。
-- 查看容器日志：`sudo docker logs -f project_comtainer_name`。
-- 进入容器：`sudo docker exec -it project_comtainer_name /bin/bash`。
+- 查看容器启动状态：`sudo docker ps -a --filter name=project_container_name`。
+- 停止容器：`sudo docker stop project_container_name`。
+- 重启容器：`sudo docker restart project_container_name`。
+- 删除容器：`sudo docker rm project_container_name`。
+- 查看容器日志：`sudo docker logs -f project_container_name`。
+- 进入容器：`sudo docker exec -it project_container_name /bin/bash`。
   - 退出:`exit`。
