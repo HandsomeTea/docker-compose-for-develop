@@ -21,3 +21,7 @@ services:
                 cd /usr/src/app
                 [ ! -d "/usr/src/app/node_modules" ] && npm install
                 npm run start
+
+# 自动重启js项目
+# npm i nodemon -g
+# nodemon test.js
