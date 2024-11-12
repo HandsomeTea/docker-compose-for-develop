@@ -11,7 +11,7 @@ services:
             - ./nginx/cert:/etc/nginx/cert
             - ./nginx/logs:/var/log/nginx
         ports:
-            # 本地端口:容器端口
+            # 本地端口A:容器端口B，访问本地端口A，实际访问容器端口B
             - 80:80
             - 443:443
         environment:

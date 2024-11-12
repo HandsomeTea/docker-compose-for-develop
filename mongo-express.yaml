@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+    mongo_express:
+        image: mongo-express:latest
+        restart: always
+        container_name: mongo_express
+        ports:
+            - 8081:8081
+        environment:
+            - ME_CONFIG_BASICAUTH_USERNAME=root
+            - ME_CONFIG_BASICAUTH_PASSWORD=123456
+            - ME_CONFIG_MONGODB_URL=mongodb://admin:admin@0.0.0.0:27017?authSource=admin
+# 访问地址：http://localhost:8081，登录mongo-express的用户名和密码分别为root和123456
