@@ -14,3 +14,5 @@ services:
             - MINIO_ROOT_USER=admin
             - MINIO_ROOT_PASSWORD=12345678
         command: server /data --console-address ":9001"
+# web可视化界面：http://localhost:9000，用户名：admin，密码：12345678
+# 服务器地址：http://localhost:9001

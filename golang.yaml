@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+    go_project_docker_compose_service_name:
+        image: golang:1.23.6
+        restart: always
+        container_name: project_container_name
+        # 使用本机网络
+        network_mode: host
+        volumes:
+            # 以下写法，本文件应放在应用程序项目的docker(或者其它)文件夹下，并将本文件的上层目录映射到docker内部的/usr/src/app中
+            # - ../:/usr/src/app
+            # 以下写法，本文件应放在应用程序项目的跟目录，并将这一层目录映射到docker内部的/usr/src/app中
+            - ./:/usr/src/app
+        environment:
+            GO_ENV: development
+        command:
+            - sh
+            - -c
+            - |
+                go install github.com/air-verse/air@latest
+                cd /usr/src/app
+                go mod tidy
+                air
