@@ -14,5 +14,8 @@ services:
             - MINIO_ROOT_USER=admin
             - MINIO_ROOT_PASSWORD=12345678
         command: server /data --console-address ":9001"
-# web可视化界面：http://localhost:9000，用户名：admin，密码：12345678
-# 服务器地址：http://localhost:9001
+# web可视化界面：http://localhost:9001，用户名：admin，密码：12345678
+# S3 API接口地址：http://localhost:9000
+# 端口说明：
+# --console-address 指定的是Web控制台端口，S3 API端口会自动设置为控制台端口 - 1，除非使用--address指定S3 API端口，如：
+# command: server /data --console-address ":9001" --address ":8001"
