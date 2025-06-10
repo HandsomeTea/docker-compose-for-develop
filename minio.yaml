@@ -7,6 +7,7 @@ services:
         ports:
             - 9000:9000
             - 9001:9001
+        # 使用外部挂载存储卷存储数据和minio配置,可在容器重启后依然保留数据和secret等配置
         volumes:
             - ./minio/data:/data
             - ./minio/config:/root/.minio
@@ -17,5 +18,7 @@ services:
 # web可视化界面：http://localhost:9001，用户名：admin，密码：12345678
 # S3 API接口地址：http://localhost:9000
 # 端口说明：
-# --console-address 指定的是Web控制台端口，S3 API端口会自动设置为控制台端口 - 1，除非使用--address指定S3 API端口，如：
+# Web控制台端口默认是9001，S3 API端口默认是9000
+# --console-address 可指定Web控制台端口，--address 可指定S3 API端口，如：
 # command: server /data --console-address ":9001" --address ":8001"
+# 一般不建议改变S3 API端口,会影响S3 API的访问，建议只改变Web控制台端口
