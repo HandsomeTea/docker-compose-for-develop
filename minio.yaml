@@ -1,9 +1,11 @@
 version: "3.8"
 services:
     minio-latest:
-        image: minio/minio:latest
+        # image: minio/minio:latest
+        # 这是最后一个可以组建集群的非企业版的版本，后续版本在web ui上去掉了集群组建功能，且后续的版本web ui功能越来越少
+        image: minio/minio:RELEASE.2024-11-07T00-52-20Z
         restart: always
-        container_name: minio-latest
+        container_name: oss-minio
         ports:
             - 9000:9000
             - 9001:9001
