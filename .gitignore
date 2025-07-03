@@ -6,3 +6,7 @@ nginx/logs
 minio
 rabbitmq/data
 rabbitmq/log
+postgres
+dbeaver
+
+mark.*

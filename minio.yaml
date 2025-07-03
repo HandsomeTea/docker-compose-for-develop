@@ -2,7 +2,11 @@ version: "3.8"
 services:
     minio-latest:
         # image: minio/minio:latest
-        # 这是最后一个可以组建集群的非企业版的版本，后续版本在web ui上去掉了集群组建功能，且后续的版本web ui功能越来越少
+        # 这是最后一个可以在web ui组建副本站点(Site Replication)的非企业版的版本，后续版本在web ui上去掉了副本站点组建功能，且后续的版本web ui功能越来越少
+        # Site Replication，站点复制
+        #    可通过web ui操作
+        #    每个站点有完整数据副本，用于跨站点数据备份，当主站点发生故障时，可切换到从站点
+        #    配置副本站点时，要求所有节点部署的minio版本必须一致，且被加入的从节点(peer site节点)不能有数据(bucket，object，IAM策略等)
         image: minio/minio:RELEASE.2024-11-07T00-52-20Z
         restart: always
         container_name: oss-minio

@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+    dbeaver:
+        image: dbeaver/cloudbeaver:latest
+        restart: always
+        container_name: dbeaver
+        volumes:
+            - ./dbeaver/workspace:/opt/cloudbeaver/workspace
+        environment:
+            - TZ=Asia/Shanghai
+        ports:
+            - 8978:8978
+# 访问地址: http://localhost:8978
+# 首次打开跟着上面的向导(NEXT)操作即可，设置完登录的用户名密码(无法通过用户名密码预先设置)，点击左上角图标即可添加数据库连接
