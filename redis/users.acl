@@ -1,4 +1,4 @@
 user default off
 user root on >root ~* +@all &*
-user app-cppbuild on >cppbuild-cache-server +@read +@write +@pubsub
+user app-cppbuild on >cppbuild-cache-server +@read +@write +@pubsub +info
 user app-cppbuild-view on >cppbuild-cache-server +@read +@keyspace +info +client +monitor +time +config +slowlog +latency
