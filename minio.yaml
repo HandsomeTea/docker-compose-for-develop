@@ -28,3 +28,37 @@ services:
 # --console-address 可指定Web控制台端口，--address 可指定S3 API端口，如：
 # command: server /data --console-address ":9001" --address ":8001"
 # 一般不建议改变S3 API端口,会影响S3 API的访问，建议只改变Web控制台端口
+
+# ================================= rancher搭建minio集群 ==================================
+# test-oss-cluster-site-{1...4}
+
+# deployment
+
+# clusterip 9000 和容器端口相同
+# clusterip  9001 和容器端口相同
+
+# MINIO_ROOT_USER admin
+# MINIO_ROOT_PASSWORD 12345678
+# TZ Asia/Shanghai
+# MINIO_STORAGE_CLASS_STANDARD EC:2
+
+# 主机目录/映射为容器
+# minio-site-config-path
+# /data/test-oss-cluster/node1/config/minio /root/.minio
+
+# 主机目录/映射为容器
+# minio-site-data-path
+# /data/test-oss-cluster/node1/data /data
+
+# server http://test-oss-cluster-site-{1...10}:9000/data --console-address ":9001"
+
+# 网络主机名
+# test-oss-cluster-site-{1...4}
+
+# 标签
+# test-oss-cluster=adela-test-minio-site
+
+# http://oss.test.adelacloud.sensetime.com
+
+# 查看节点状态
+# curl -I http://test-oss-cluster-site-1:9000/minio/health/live
