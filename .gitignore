@@ -3,10 +3,12 @@ mysql/data
 redis/**/*.rdb
 nginx/cert
 nginx/logs
+nginx/.htpasswd
 minio
 rabbitmq/data
 rabbitmq/log
 postgres
 dbeaver
+filebrowser/filebrowser.db
 
 mark.*

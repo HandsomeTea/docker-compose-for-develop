@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+    lib_filebrowser:
+        image: filebrowser/filebrowser:s6
+        container_name: filebrowser
+        restart: always
+        environment:
+            # 设置时区为上海时间
+            - TZ=Asia/Shanghai
+        ports:
+            - 8080:80
+        volumes:
+            - ./filebrowser/filebrowser.db:/database/filebrowser.db
+            - ./filebrowser/settings.json:/config/settings.json
+            - /home/SENSETIME/liuhaifeng/local-code:/srv
+        user: "0:0" # 以 root 权限运行，确保对挂载目录拥有完全的读写和下载权限
+
+
+# 需手动新建 ./filebrowser/filebrowser.db 空文件
+# 授权挂载的文件
+#   sudo chmod 666 ./filebrowser/settings.json
+#   touch ./filebrowser/filebrowser.db && sudo chmod 666 ./filebrowser/filebrowser.db
+# 启动，访问 http://localhost:8080
+#   用户名：admin
+#   密码需要进入容器中查看启动日志，系统会随机生成一个密码，可以使用这个密码登录进去之后修改密码，新密码至少12位，如：admin1234567

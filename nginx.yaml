@@ -10,6 +10,8 @@ services:
             - ./nginx/html:/usr/share/nginx/html
             - ./nginx/cert:/etc/nginx/cert
             - ./nginx/logs:/var/log/nginx
+            - ./nginx/.htpasswd:/etc/nginx/.htpasswd
+            - ~/local-lib:/var/www/lib-source
         ports:
             # 本地端口A:容器端口B，访问本地端口A，实际访问容器端口B
             - 80:80
@@ -17,3 +19,10 @@ services:
         environment:
             - TZ=Asia/Shanghai
 # 注意80端口可能被Apache占用，使用 systemctl stop/status apache2 查看
+
+# 生成密码文件，例如：用户名为user1，执行后会提示输入密码
+#   htpasswd -c ./nginx/.htpasswd user1
+# 使用系统自带的工具生成.htpasswd文件
+#   read -p "请输入用户名: " USERNAME
+#   read -sp "请输入密码: " PASSWORD
+#   printf "${USERNAME}:$(openssl passwd -crypt ${PASSWORD})\n" >> ./nginx/.htpasswd

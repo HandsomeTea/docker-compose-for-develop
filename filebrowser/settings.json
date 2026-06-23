@@ -1,0 +1,22 @@
+{
+    "port": 80,
+    "baseURL": "",
+    "address": "",
+    "log": "stdout",
+    "database": "/database/filebrowser.db",
+    "root": "/srv",
+    "tlsCert": "",
+    "tlsKey": "",
+    "recaptchaKey": "",
+    "recaptchaSecret": "",
+    "authMethod": "json",
+    "branding": {
+        "name": "File Browser",
+        "disableExternal": false,
+        "files": ""
+    },
+    "commands": [],
+    "allowEdit": true,
+    "allowNew": true,
+    "allowCommands": true
+}
